@@ -1,0 +1,11 @@
+[
+  {
+    "Username": "rohit",
+    "PrimaryDosha": "Pitta",
+    "SecondaryDosha": "Kapha",
+    "VataCount": 2,
+    "PittaCount": 5,
+    "KaphaCount": 5,
+    "CompletedAt": "2025-10-19T20:03:32.9579752+05:30"
+  }
+]

@@ -1,0 +1,100 @@
+﻿<Window x:Class="PrakritiAnalyzer.AnalyzeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prakriti Questionnaire" Height="700" Width="800"
+        Background="#FAFAFA" ScrollViewer.VerticalScrollBarVisibility="Auto">
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <TextBlock Text="Prakriti (Nature) Questionnaire"
+                       FontSize="26" FontWeight="Bold"
+                       Foreground="#27632A" Margin="10"/>
+
+            <Separator Margin="10" />
+
+            <Grid x:Name="QuizGrid">
+                <StackPanel>
+
+                    <!-- 1. Skin -->
+                    <TextBlock Text="1. Skin: What best describes your skin?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Dry" Tag="Vata" GroupName="Skin" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Oily" Tag="Pitta" GroupName="Skin" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Balanced" Tag="Kapha" GroupName="Skin" Checked="RadioButton_Checked"/>
+
+                    <!-- 2. Body Build -->
+                    <TextBlock Text="2. Body Build: What is your natural frame?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Thin" Tag="Vata" GroupName="Build" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Muscular" Tag="Pitta" GroupName="Build" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Heavy" Tag="Kapha" GroupName="Build" Checked="RadioButton_Checked"/>
+
+                    <!-- 3. Hair -->
+                    <TextBlock Text="3. Hair: What best describes your hair?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Dry and Thin" Tag="Vata" GroupName="Hair" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Silky" Tag="Pitta" GroupName="Hair" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Oily and Thick" Tag="Kapha" GroupName="Hair" Checked="RadioButton_Checked"/>
+
+                    <!-- 4. Eyes -->
+                    <TextBlock Text="4. Eyes: What describes your eyes?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Small" Tag="Vata" GroupName="Eyes" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Medium" Tag="Pitta" GroupName="Eyes" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Large" Tag="Kapha" GroupName="Eyes" Checked="RadioButton_Checked"/>
+
+                    <!-- 5. Mindset -->
+                    <TextBlock Text="5. Mindset: Your usual mindset?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Calm" Tag="Kapha" GroupName="Mindset" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Intense" Tag="Pitta" GroupName="Mindset" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Restless" Tag="Vata" GroupName="Mindset" Checked="RadioButton_Checked"/>
+
+                    <!-- 6. Memory -->
+                    <TextBlock Text="6. Memory: Your memory is?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Good (remember easily)" Tag="Pitta" GroupName="Memory" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Poor (tend to forget)" Tag="Vata" GroupName="Memory" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Balanced" Tag="Kapha" GroupName="Memory" Checked="RadioButton_Checked"/>
+
+                    <!-- 7. Emotions -->
+                    <TextBlock Text="7. Emotions: How do you usually feel?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Prone to anger" Tag="Pitta" GroupName="Emotions" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Prone to anxiety" Tag="Vata" GroupName="Emotions" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Generally content" Tag="Kapha" GroupName="Emotions" Checked="RadioButton_Checked"/>
+
+                    <!-- 8. Diet -->
+                    <TextBlock Text="8. Diet: Preferred types of food?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Hot" Tag="Vata" GroupName="Diet" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Cold" Tag="Kapha" GroupName="Diet" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Spicy" Tag="Pitta" GroupName="Diet" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Sweet" Tag="Kapha" GroupName="Diet" Checked="RadioButton_Checked"/>
+
+                    <!-- 9. Sleep -->
+                    <TextBlock Text="9. Sleep: Your sleep pattern?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Deep" Tag="Kapha" GroupName="Sleep" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Light" Tag="Vata" GroupName="Sleep" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Disturbed" Tag="Pitta" GroupName="Sleep" Checked="RadioButton_Checked"/>
+
+                    <!-- 10. Energy Levels -->
+                    <TextBlock Text="10. Energy level?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Energetic" Tag="Pitta" GroupName="Energy" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Balanced" Tag="Kapha" GroupName="Energy" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Fatigue" Tag="Vata" GroupName="Energy" Checked="RadioButton_Checked"/>
+
+                    <!-- 11. Weather -->
+                    <TextBlock Text="11. Weather preference?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Warm" Tag="Kapha" GroupName="Weather" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Cool" Tag="Pitta" GroupName="Weather" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Moderate" Tag="Vata" GroupName="Weather" Checked="RadioButton_Checked"/>
+
+                    <!-- 12. Stress Response -->
+                    <TextBlock Text="12. Stress response?" FontWeight="Bold" Margin="5"/>
+                    <RadioButton Content="Become anxious" Tag="Vata" GroupName="Stress" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Become irritable" Tag="Pitta" GroupName="Stress" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Handle calmly" Tag="Kapha" GroupName="Stress" Checked="RadioButton_Checked"/>
+                </StackPanel>
+            </Grid>
+
+            <Button x:Name="SubmitButton" Content="Submit" Width="150" Height="40" Margin="20"
+                    Background="#33A858" Foreground="White"
+                    FontSize="16" Click="Submit_Click" IsEnabled="False"/>
+
+            <TextBlock x:Name="ResultText" FontSize="18" Margin="10"
+                       TextWrapping="Wrap" Foreground="#27632A"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
